@@ -1,0 +1,162 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --background: hsl(0, 0%, 100%);
+  --foreground: hsl(20, 14.3%, 4.1%);
+  --muted: hsl(60, 4.8%, 95.9%);
+  --muted-foreground: hsl(25, 5.3%, 44.7%);
+  --popover: hsl(0, 0%, 100%);
+  --popover-foreground: hsl(20, 14.3%, 4.1%);
+  --card: hsl(0, 0%, 100%);
+  --card-foreground: hsl(20, 14.3%, 4.1%);
+  --border: hsl(20, 5.9%, 90%);
+  --input: hsl(20, 5.9%, 90%);
+  --primary: hsl(207, 90%, 54%);
+  --primary-foreground: hsl(211, 100%, 99%);
+  --secondary: hsl(60, 4.8%, 95.9%);
+  --secondary-foreground: hsl(24, 9.8%, 10%);
+  --accent: hsl(60, 4.8%, 95.9%);
+  --accent-foreground: hsl(24, 9.8%, 10%);
+  --destructive: hsl(0, 84.2%, 60.2%);
+  --destructive-foreground: hsl(60, 9.1%, 97.8%);
+  --ring: hsl(20, 14.3%, 4.1%);
+  --radius: 0.5rem;
+  
+  /* Microsoft-inspired colors */
+  --ms-blue: hsl(207, 90%, 54%);
+  --ms-blue-dark: hsl(207, 90%, 38%);
+  --ms-blue-light: hsl(174, 72%, 56%);
+  --ms-accent: hsl(207, 73%, 42%);
+  --ms-gray: hsl(210, 9%, 44%);
+  --ms-gray-light: hsl(210, 17%, 98%);
+}
+
+.dark {
+  --background: hsl(240, 10%, 3.9%);
+  --foreground: hsl(0, 0%, 98%);
+  --muted: hsl(240, 3.7%, 15.9%);
+  --muted-foreground: hsl(240, 5%, 64.9%);
+  --popover: hsl(240, 10%, 3.9%);
+  --popover-foreground: hsl(0, 0%, 98%);
+  --card: hsl(240, 10%, 3.9%);
+  --card-foreground: hsl(0, 0%, 98%);
+  --border: hsl(240, 3.7%, 15.9%);
+  --input: hsl(240, 3.7%, 15.9%);
+  --primary: hsl(207, 90%, 54%);
+  --primary-foreground: hsl(211, 100%, 99%);
+  --secondary: hsl(240, 3.7%, 15.9%);
+  --secondary-foreground: hsl(0, 0%, 98%);
+  --accent: hsl(240, 3.7%, 15.9%);
+  --accent-foreground: hsl(0, 0%, 98%);
+  --destructive: hsl(0, 62.8%, 30.6%);
+  --destructive-foreground: hsl(0, 0%, 98%);
+  --ring: hsl(240, 4.9%, 83.9%);
+  --radius: 0.5rem;
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply font-sans antialiased bg-background text-foreground;
+    font-family: 'Inter', system-ui, sans-serif;
+  }
+}
+
+@layer utilities {
+  .ms-blue {
+    color: var(--ms-blue);
+  }
+  
+  .bg-ms-blue {
+    background-color: var(--ms-blue);
+  }
+  
+  .bg-ms-blue-dark {
+    background-color: var(--ms-blue-dark);
+  }
+  
+  .bg-ms-blue-light {
+    background-color: var(--ms-blue-light);
+  }
+  
+  .bg-ms-gray-light {
+    background-color: var(--ms-gray-light);
+  }
+  
+  .text-ms-blue {
+    color: var(--ms-blue);
+  }
+  
+  .text-ms-blue-dark {
+    color: var(--ms-blue-dark);
+  }
+  
+  .text-ms-blue-light {
+    color: var(--ms-blue-light);
+  }
+  
+  .text-ms-gray {
+    color: var(--ms-gray);
+  }
+  
+  .border-ms-blue {
+    border-color: var(--ms-blue);
+  }
+  
+  .hover\:bg-ms-blue:hover {
+    background-color: var(--ms-blue);
+  }
+  
+  .hover\:bg-ms-blue-dark:hover {
+    background-color: var(--ms-blue-dark);
+  }
+  
+  .hover\:text-ms-blue:hover {
+    color: var(--ms-blue);
+  }
+  
+  .hover\:text-ms-blue-dark:hover {
+    color: var(--ms-blue-dark);
+  }
+}
+
+/* Smooth scrolling */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Custom animations */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fade-in-up {
+  animation: fadeInUp 0.6s ease-out forwards;
+}
+
+/* Hero gradient background */
+.hero-gradient {
+  background: linear-gradient(135deg, var(--ms-blue) 0%, var(--ms-blue-dark) 100%);
+}
+
+/* Card hover effects */
+.card-hover {
+  transition: all 0.3s ease;
+}
+
+.card-hover:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+}
